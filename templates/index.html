@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piracy Detection</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        label {
+            font-size: 1em;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #555;
+        }
+        input {
+            padding: 12px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Piracy Detection System</h1>
+        <form action="/predict" method="post">
+            <label for="file_size">File Size (GB):</label>
+            <input type="text" id="file_size" name="file_size" placeholder="Enter file size in GB" required>
+            
+            <label for="resolution">Resolution (e.g., 720, 1080):</label>
+            <input type="text" id="resolution" name="resolution" placeholder="Enter resolution" required>
+            
+            <button type="submit">Detect Piracy</button>
+        </form>
+        <footer>
+            &copy; 2024 Piracy Detection System. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
